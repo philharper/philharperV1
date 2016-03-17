@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Waste Management</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" media="screen" title="no title" />
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="bootstrap/css/carousel.css" type="text/css" />
+		<link rel="stylesheet" href="bootstrap/css/styles.css" type="text/css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		<script src="bootstrap/js/bootstrap.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="bootstrap/js/carousel.js"></script>
+		<script>
+			function initialize() {
+				var map_canvas = document.getElementById('map_canvas');
+				var map_options = {
+					center : new google.maps.LatLng(51.297329, -2.515254),
+					zoom : 15,
+					mapTypeId : google.maps.MapTypeId.ROADMAP
+				}
+				var map = new google.maps.Map(map_canvas, map_options)
+
+				var marker = new google.maps.Marker({
+					position : new google.maps.LatLng(51.297329, -2.515254),
+					map : map,
+					title : 'Weaver Demolition'
+				});
+			}
+
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header-images">
+				<img src="images/headerImage.png" alt="Company logo" id="logo-image" />
+			</div>
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand">Weaver Demolition</a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">Home</a>
+							</li>
+							<li>
+								<a href="aboutUs.html">About Us</a>
+							</li>
+							<li>
+								<a href="wastemanagement.html">Waste Management/Recycling</a>
+							</li>
+							<li>
+								<a href="health.html">Health, Safety and Environment</a>
+							</li>
+                            <li>
+                                <a href="projects.html">Projects</a>
+                            </li>
+							<li class="active">
+								<a href="contact.html">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+			<div id="content">
+				<div id="bodyText">
+					<div id="map">
+						<h1>Find Us</h1>
+						<div id="map_canvas"></div>
+					</div>
+					<h1>Contact Details</h1>
+					<div id="contact-information">
+						<p>
+							For demolition service enquiries, advice and quoteations please contact:
+						</p>
+						<p>
+							Telephone: <span class="bold-text">01761 425391</span>
+						</p>
+						<p>
+							Fax: <span class="bold-text">01761 453644</span>
+						</p>
+						<p>
+							Mobile: <span class="bold-text">07768 238223</span>
+						</p>
+						<br/>
+						<p>
+							Email: <span class="bold-text">enquiries@weaverdemolition.com</span>
+						</p>
+						<br/>
+						<p>
+							Head Office: <span class="bold-text">Weaver Demolition Ltd</span>
+							<br/>
+							<span style="visibility: hidden;">Head Office: </span><span class="bold-text"> Farrington Fields
+								<br/>
+								Farrington Gurney
+								<br/>
+								Bristol
+								<br/>
+								BS39 6UU </span>
+						</p>
+					</div>
+				</div>
+				<hr class="featurette-divider">
+				<footer>
+					<p class="pull-right">
+						<a href="#">Back to top</a>
+					</p>
+					<p>
+						2014 Weaver Demolition Ltd.
+					</p>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>

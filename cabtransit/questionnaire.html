@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Lockly || Questionnaire</title>
+<style type="text/css">
+body {
+	background-color: #0BB5FF;
+	font-family: helvetica;
+}
+</style>
+</head>
+<body>
+<h1>Lockly - Questionnaire</h1>
+<h2>Thank you for taking your time to complete this questionnaire for me. Please can you read this quick introduction to my project so you can fill out the questionnaire properly.</h2>
+<h2>I am creating a mobile application that adds/removes the passcode lock on your mobile phone depending on your location. For example, when you are home it's unlikely you really want your passcode on and it's annoying having to unlock it every time you want to use your phone. With this app the passcode will automatically disable when you arrive in one of your safe zones that you have set your self.</h2>
+<div style="margin-left: 50px;">
+	<form method="post" action="complete.php">
+		<h3>Question 1</h3>
+		<p>Do you use own a smart phone?</p>
+		<input type="radio" name="smartPhone" value="Yes">Yes<br/>
+		<input type="radio" name="smartPhone" value="No">No
+		<h3>Question 2</h3>
+		<p>What OS is your mobile phone?</p>
+		<input type="radio" name="OS" value="iOS">iOS - iPhone<br/>
+		<input type="radio" name="OS" value="Android">Android - HTC, Samsung, Sony etc<br/>
+		<input type="radio" name="OS" value="Windows">Windows Phone<br/>
+		<input type="radio" name="OS" value="Blackberry">Blackberry<br/>
+		<input type="radio" name="OS" value="Other">Other
+		<h3>Question 3</h3>
+		<p>Do you use a passcode on your phone?</p>
+		<input type="radio" name="passcode" value="Yes">Yes<br/>
+		<input type="radio" name="passcode" value="No">No
+		<h3 style="color: white;">The following questions will be about the proposed application.</h3>
+		<h3>Question 4</h3>
+		<p>When choosing the safe location (the area where your phone will unlock), would you prefer to simply press a button and allow the app to find your location or choose the location on a map and change the size of the area that it unlocks in?</p>
+		<input type="radio" name="location" value="button">Simple button<br/>
+		<input type="radio" name="location" value="map">Map
+		<h3>Question 4</h3>
+		<p>Would you prefer the app to unlock your phone using WiFi? So for example, instead of your phone unlocking depending on your location, it could unlock it when you connect to your trusted WiFi networks?</p>
+		<input type="radio" name="wifi" value="wifi">WiFi<br/>
+		<input type="radio" name="wifi" value="location">Location
+		<h3>Question 5</h3>
+		<p>Would you use this app on a tablet?</p>
+		<input type="radio" name="tablet" value="Yes">Yes<br/>
+		<input type="radio" name="tablet" value="No">No
+		<h3>Question 6</h3>
+		<p>Would you like to have more than one safe location? So possibly one for home and one for work.</p>
+		<input type="radio" name="multiple" value="Yes">Yes<br/>
+		<input type="radio" name="multiple" value="No">No<br/>
+		<h3>Any extra information</h3>
+		<p>Please can you add any extra information that you might of thought of while completing this questionnaire.</p>
+		<textarea name="extraInfo" rows="4" cols="50" ></textarea><br/><br/>
+		<input type="submit" value="Submit">
+	</form>
+</div>
+</body>
+</html>

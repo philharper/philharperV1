@@ -1,0 +1,162 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px !important;
+}
+
+#container {
+	width: 100%;
+	margin: auto;
+	min-width: 950px;
+}
+
+#aboutNav {
+	height: 50px;
+	width: 100%;
+	margin-top:-5px;
+	text-align: center;
+	background-color:#C2C2C2;
+}
+
+#aboutNav div:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+.aboutButton {
+	height: 32px;
+	padding-top: 18px;
+	padding-right: 20px;
+	padding-left: 20px;
+	font-size: 20px;
+}
+
+#content {
+	height: 200px;
+	width: 40%;
+	margin-left: 10%;
+	float: left;
+}
+
+#aboutTitle {
+	height: 50px;
+	width: 100%;
+	text-align: center;
+}
+
+#logo {
+	position: fixed;
+	margin-left: 20px;
+	margin-top: 8px;
+	height: 70px;
+	z-index: 1;
+}
+
+#navbar {
+	position: absolute;
+	top: 0px;
+	right: 0%;
+	width: 700px;
+	margin-top: 80px;
+}
+
+#navFull {
+	position: fixed;
+	top: 0px;
+	right: 0%;
+	width: 100%;
+	padding-top: 60px;
+	height: 40px;
+	background-color:#C2C2C2;	
+}
+
+#navFull a {
+	position: relative !important;
+	padding: 11px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 19px;
+	color: black;
+	float: right;
+	position: inherit;
+}
+
+#navbar a {
+	position: relative !important;
+	padding: 10px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 19px;
+	color: black;
+	float: left;
+	position: inherit;
+}
+
+#navbar a:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+#navFull a:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+#footer {
+	width: 1220px;
+	height: 140px;
+	background-color: #c2c2c2;
+	bottom: 0px;
+	position: absolute;
+	padding-left: 40px;
+}
+
+#contentImg {
+	width: 40%;
+	margin-right: 10%;
+	height: 200px;
+}
+
+#acred {
+	margin-top: 40px;
+	bottom: 0px;
+	height: 80px;
+	width: 100%;
+}
+
+.logo {
+	float: right;
+	margin: 10px
+}
+
+/*My slider styles*/
+#my_slider {
+	height: 690px;
+	width: 1000px;
+    overflow: hidden;
+    position:relative;
+    list-style: none outside none;
+    padding:0;
+    margin:0;
+}
+#my_slider li {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display:none;
+}
+#my_slider li:first-child {
+    display:block;
+}
+#counter {
+    text-align:right;
+    font-size:16px;
+    width:500px;
+}
+
+

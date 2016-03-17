@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Waste Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" media="screen" title="no title" />
+    <link rel="stylesheet" href="bootstrap/css/carousel.css" type="text/css" />
+    <link rel="stylesheet" href="bootstrap/css/styles.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/carousel.js"></script>
+    <script>
+        $(function () {
+            $("#includedContent").load("projects/testProject.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header-images">
+            <img src="images/headerImage.png" alt="Company logo" id="logo-image" />
+            <div id="accreditation">
+            </div>
+        </div>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">Weaver Demolition</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="aboutUs.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="wastemanagement.html">Waste Management/Recycling</a>
+                        </li>
+                        <li>
+                            <a href="health.html">Health, Safety and Environment</a>
+                        </li>
+                        <li class="active">
+                            <a href="projects.html">Projects</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div id="content">
+            <h1>Projects</h1>
+            <p>
+                Here is where you can view some of the projects that we have undertaken in the past.
+            </p></br>
+            <!-- Button trigger modal -->
+            <table class="table .table-bordered">
+                <tr>
+                    <td>
+                        <button class="btn btn-primary btn-lg project-buton" data-toggle="modal" data-target="#myModal1">
+                            View Project
+                        </button>
+                    </td>
+                    <td>Short description here - Demolition project at bristol on 22/05/2013</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+                            View Project
+                        </button>
+                        <td>Short description here - Demolition project at bristol on 22/05/2013</td>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">This will be the project title</h4>
+                        </div>
+                        <div class="modal-body" style="overflow: auto;">
+                            <div class="text-wrapper" style="width :50%; float: left;">
+                                This is where the project description will be. You can add as much text as you want, the picture on the right can be used to show the users what the project looked like.
+                            </div>
+                            <div class="img-wrapper">
+                                <img src="images/photo.JPG" style="width: 300px; height: 200px; float: right;">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">Modal two</h4>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="featurette-divider" style="width: 100% !important;">
+            <footer>
+                <p class="pull-right">
+                    <a href="#">Back to top</a>
+                </p>
+                <p>
+                    2014 Weaver Demolition Ltd.
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

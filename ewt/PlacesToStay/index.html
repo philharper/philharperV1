@@ -1,0 +1,219 @@
+<html>
+<head>
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<!-- This code is the answer to question 3 of the EWT assignment -->
+	<title>placesToStay | Home</title>
+	<!-- This imports the leaflet style sheet and script -->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+	<link rel="stylesheet" media="only screen and (min-width: 701px)" type="text/css" href="desktop.css" />
+	<link rel="stylesheet" media="only screen and (max-width: 700px)" type="text/css" href="mobile.css" />
+	<script type="text/javascript" src="date.js"></script>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+	<script type='text/javascript' src='http://www.free-map.org.uk/0.6/js/lib/Ajax.js'> </script>
+	<script type="text/javascript">
+
+		var map;
+
+		function ajaxSearch()
+		{
+			var l = document.getElementById("locationSearch").value;
+
+			var request = new Ajax().sendRequest
+        	('search.php',
+            	{ method: 'GET',
+              	parameters: 'location=' + l,
+              	callback: responseReceived }
+        	);
+		}
+
+		function ajaxBook(id, date, number)
+		{
+			var request = new Ajax().sendRequest
+        	('book.php',
+            	{ method: 'GET',
+              	parameters: 'id=' + id + "&date=" + date + "&n=" + number,
+              	callback: responseReceivedBooking }
+        	);	
+		}
+
+		function CheckAvailability(id) 
+		{
+			var request = new Ajax().sendRequest
+        	('CheckAvailability.php',
+            	{ method: 'GET',
+              	parameters: 'id=' + id,
+              	callback: responseReceivedAvailability }
+        	);	
+		}
+
+		function responseReceivedAvailability(xmlHTTP) 
+		{
+			document.getElementById('avail').style.visibility = 'visible';
+
+			var number = 0;
+			var a = 10;
+			var b = 45;
+			var c = 170;
+			var d = 240;
+
+			var canvas = document.getElementById('canvas1');
+			var ctx = canvas.getContext('2d');
+			var x = 10;
+			ctx.font = '12pt Helvetica';
+
+			for(var i = 0; i <= 21; i++)
+			{
+				number = 20;
+
+				var today = new Date();
+				var date = today.add(i).day();
+				var dateD = date.getDate() ;
+				var dateM = date.getMonth()+1;
+				var dateY = date.getFullYear();
+
+				if(dateM < 10){
+					dateM = "0" + dateM;
+				}
+				if(dateD < 10){
+					dateD = "0" + dateD;
+				}
+				var dateFor = dateY + "-" + dateM + "-" + dateD;
+
+				var searchArray = xmlHTTP.responseXML.getElementsByTagName("booking");
+				for(var count=0; count<searchArray.length; count++)
+				{
+					var date = searchArray[count].getElementsByTagName("date")[0].firstChild.nodeValue;
+					var no = searchArray[count].getElementsByTagName("number")[0].firstChild.nodeValue;
+
+					if(date == dateFor)
+					{
+						number = number-no;
+					}
+				}
+
+				// Left rectangle style
+				ctx.fillStyle = '#B8B8B8 ';
+				ctx.fillRect(a,x,150,30);
+				// Left text Style
+				ctx.fillStyle = '#000';
+				ctx.fillText(dateFor, b, x+20);
+				// Right rectangle style
+
+				if(number > 0) 	{ ctx.fillStyle = '#00FF66'; } // Green
+				if(number < 10) { ctx.fillStyle = '#FF6600'; } // Orange
+				if(number == 0) { ctx.fillStyle = '#FF3300'; } // Red
+
+				ctx.fillRect(c,x,150,30);
+				// Right text style
+				ctx.fillStyle = '#000';
+				ctx.fillText(number, d, x+20);
+
+				x = x+35;
+
+				if(i == 10)
+				{
+					a = 350;
+					b = 385;
+					c = 510;
+					d = 580;
+					x = 10;
+				}
+			}
+		}
+
+		function responseReceivedBooking(xmlHTTP)
+		{
+			var searchArray = xmlHTTP.responseXML.getElementsByTagName("confirmation");
+			if(searchArray[0].getElementsByTagName("id")[0].firstChild.nodeValue ==  1)
+			{
+				alert("Booked!");
+			}
+			else if(searchArray[0].getElementsByTagName("id")[0].firstChild.nodeValue ==  2)
+			{
+				alert("Booking unsucessful, not enough room available");
+			}
+		}
+
+		function responseReceived(xmlHTTP)
+		{
+
+			var html = "";
+
+			var searchArray = xmlHTTP.responseXML.getElementsByTagName("places");
+			for(var count=0; count<searchArray.length; count++)
+			{
+				var id = searchArray[count].getElementsByTagName("id")[0].
+				firstChild.nodeValue;
+
+				var name = searchArray[count].getElementsByTagName("name")[0].
+				firstChild.nodeValue;
+
+				var location = searchArray[count].getElementsByTagName("location")[0].
+				firstChild.nodeValue;
+
+				var latitude = searchArray[count].getElementsByTagName("latitude")[0].
+				firstChild.nodeValue;
+
+				var longitude = searchArray[count].getElementsByTagName("longitude")[0].
+				firstChild.nodeValue;
+
+				html = html + "</br>ID: " + id + "<br/>Name: " + name + "<br/>Location: " + location + "<br/>Latitude: " + latitude + "<br/>Longitude: " + longitude + "<br/><input type='button' value='View' onclick='center(" +latitude + "," + longitude + ")' /><br/>";
+
+				L.marker([latitude, longitude]).addTo(map).bindPopup(name + '<br/><input type="button" value="Book" onclick="book(' + id + ')" /><br/><input type="button" value="Check Availability" onclick="CheckAvailability(' + id + ')" />');
+			}
+
+			document.getElementById('response').innerHTML = html;
+
+			var searchError = xmlHTTP.responseXML.getElementsByTagName("error");
+			if(searchError[0].getElementsByTagName("id")[0].firstChild.nodeValue ==  1){
+				alert("Error, no places found");
+			}
+		}
+
+		function center(lat, lng) 
+		{
+			document.getElementById('avail').style.visibility = 'hidden';
+			var pos = new L.LatLng(lat, lng);
+			map.setView(pos, 14);
+		}
+
+		function book(id) 
+		{
+			var date=prompt("Please enter the date you want to stay using format 'YYYY-MM-DD'","");
+			var number = prompt("Please enter the number of people staying","");
+			ajaxBook(id, date, number);
+		}
+
+		function closeDiv(div)
+		{
+			document.getElementById(div).style.visibility = "hidden";
+		}
+
+		function init() 
+		{
+			map = new L.map("map1");
+
+			var attrib = "Map data copyright OpenStreetMap contributors, Open Database License";
+
+			var layerOSM = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution: attrib}).addTo(map);
+
+			var pos = new L.LatLng(50.908, -1.4);
+			map.setView(pos, 14);
+		}
+
+	</script>
+</head>
+<body onload="init()">
+	<h1>Places to Stay</h1>
+	<h2>Search for the best places to stay all around the world!</h2>
+	Location <input id="locationSearch" /><br/>
+	<input type="button" value="Search" onclick="ajaxSearch()" /><br/> 
+	<div id="avail">
+	<input type="button" value="Close" onclick="closeDiv('avail')" style="float: left; margin: 10px;" />
+	<h2 style="float: right; margin-right: 280px; margin-top: 2px; margin-bottom: 0px;">Availability</h2>
+	<canvas id='canvas1' width='700' height='500'></canvas>
+	</div>
+	<div id="map1"></div>
+	<div id="response" ></div>
+</body>
+</html>

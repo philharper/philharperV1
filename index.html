@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--Website created by Philip Harper-->
+	<head>
+		<title>Phil Harper</title>
+		<meta name="description" content="A personal website made by Philip Harper"/>
+		<meta name="keywords" content="phil, harper, solent"/>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles/philharper.css"/>
+		<link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+     	<link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
+     	<link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
+    	<link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
+    	<link rel="stylesheet" href="styles/nivo-slider.css" type="text/css" media="screen" />
+    	<link rel="stylesheet" href="styles/style.css" type="text/css" media="screen" />
+    	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="shortcut icon" href="images/favicon.ico"/>
+		<script type="text/javascript" src="scripts/jsFunctions.js"></script>
+		<script type="text/javascript" src="scripts/jquery-1.9.0.min.js"></script>
+    	<script type="text/javascript" src="scripts/jquery.nivo.slider.js"></script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-38966848-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		  
+		$(window).load(function() {
+        $('#slider').nivoSlider();
+        effect: 'slideInLeft'
+    	});
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<h1 class="center">Philip Harper</h1>
+			<div id="navbar">
+				<script type="text/javascript">
+					navbar();
+	    		</script>
+			</div>
+			<div id="content">
+				<h2 style='color: #0066FF;'>About me</h2>
+				<div id="wrapper">
+	        		<div class="slider-wrapper theme-default">
+	            		<div id="slider" class="nivoSlider">
+	                		<img src="images/HelloWorld.jpg" data-thumb="images/HelloWorld.jpg" alt="" data-transition="slideInLeft"/>
+	               			<img src="images/appleKeyboard.jpg" data-thumb="images/appleKeyboard.jpg" alt="Benjamin Bogdanovic &copy;" data-transition="slideInLeft" />
+	               			<img src="images/SotonSign.jpg" data-thumb="images/SotonSign.jpg" alt="" data-transition="slideInLeft"/>
+	            		</div>
+	        		</div>
+	        		<p>
+						My name is Philip Harper and welcome to my website.<br/>
+						I am a 21 year old student currently studying Software Engineering at Southampton Solent University.
+					</p>
+					<h3>Personal Statement</h3>
+					<p>
+						A young, confident Software Engineering student at Southampton Solent University with experience
+						working with computer hardware and software. Organised and ready to learn new tasks and to fit into 
+						a new role. Enjoys working in groups or alone to get tasks finished on time to the highest standard. 
+						Has gained wide experience in IT from using computers from a young age and studying ICT at A-Level standard and currently
+						at BSc(Hons) degree level.
+					</p>
+		 		</div>
+	        </div>
+       </div>
+		<footer>
+			<p class="center">
+				Phil Harper &copy; 2013<br/>
+				Think 'What If' for the future, not the past.
+			</p>
+		</footer>
+	</body>
+</html>

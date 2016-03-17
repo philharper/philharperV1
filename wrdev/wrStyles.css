@@ -1,0 +1,213 @@
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: Helvetica, sans-serif;
+}
+
+p {
+	margin: 0px;
+}
+
+#navbar {
+	position:absolute;
+	z-index: -1;
+	height: 40px;
+	width: 100%;
+	background-color: #000;
+	opacity: 0.7;
+	top: 0px;
+}
+
+#navLinks a {
+	color: white;
+	text-decoration: none;
+	font-size: 15px;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-bottom: 13px;
+	float: left;
+}
+
+#navLinks {
+	height: 40px;
+	width: 100%;
+	top: 0px;
+}
+
+#serviceSub {
+	height: 30px;
+	width: 100%;
+	background-color: #000;
+	color: white;
+	visibility: hidden;
+}
+
+#Sub {
+	height: 30px;
+	width: 100%;
+	background-color: #000;
+	color: white;
+}
+
+.serNavBar {
+	margin: 5px;
+	float: left;
+	font-size: 15px;
+}
+
+#wrLogo {
+	height: 100px;
+	width: 170px;
+	background-color: #000;
+	margin-top: 300px;
+	padding: 30px;
+	text-align: center;
+	opacity: 0.7;
+}
+
+#wrLogo p {
+	color: #fff;
+	font-size: 50px;
+}
+
+#twitterFeed {
+	float: right;
+	width: 300px;
+	margin-right: 50px;
+}
+
+#footer {
+	position:absolute;
+   	bottom:0;
+   	width:100%;
+   	height:60px;
+   	background:#000;
+   	opacity: 0.7;
+   	z-index: -1;
+}
+
+#footerPlus {
+	position: absolute;
+	bottom:0;
+   	width:100%;
+   	height:60px;
+}
+
+#contact {
+	float: right; 
+	color: #fff;
+	margin-right: 30px;
+	margin-top: 20px;
+}
+
+#content {
+	width: 350px;
+	height: 350px;
+	background: #000;
+	color: #fff;
+	opacity: 0.7;
+	margin-top: 100px;
+	margin-left: 50px;
+	padding: 50px;
+	z-index: -1;
+	position:absolute;
+}
+
+#contentPlus {
+	width: 375px;
+	height: 375px;
+	color: #fff;
+	margin-top: 50px;
+	margin-left: 50px;
+	padding: 50px;
+}
+
+nav a#pull {  
+    display: none;  
+}   
+
+
+/* Responsive */
+@media screen and (max-width: 490px) {
+	
+	#footer, #footerPlus {
+		position: fixed;
+		background: #000;
+	}
+	
+	html {
+		background: #000;
+	}
+	
+	#navLinks {
+		width: 100%;
+	}
+	
+	body, #container, html { 
+		width: 100% !important;	
+	}
+	
+	#navLinks a {
+		padding-left: 15px;
+		padding-top: 10px;
+		padding-bottom: 13px;
+		padding-right: 0px;
+	}
+	
+	nav {   
+        height: auto;  
+    }  
+    nav a {  
+       	width: 100%;  
+        display: block;  
+        height: auto;  
+        border-bottom: 1px solid #576979;  
+        border-right: 1px solid #576979;  
+        text-align: left;    
+        text-indent: 25px;  
+        background: #000;
+        opacity: 0.7;
+        display: none;
+    }  
+    
+    nav a#pull {  
+        display: block;  
+        background-color: #000;  
+        width: 100%;  
+        position: relative;  
+    }  
+    
+    #content {
+    	visibility: hidden;
+    	width: 0px;
+    	height: 0px;
+    }
+    
+    #contentPlus {
+    	width: 80%;
+    	background: grey;
+    	margin: 5%;
+    	padding: 5%;
+    	height: 200px;
+    }
+    
+    nav a#pull:after {  
+        content:"";  
+        width: 30px;  
+        height: 30px;  
+        display: inline-block;  
+        position: absolute;  
+       	right: 15px;  
+        top: 10px;  
+    } 
+}  
+

@@ -1,0 +1,18 @@
+body{font-family: sans-serif;}
+
+#avail {
+	width: 670px; 
+	height: 450px; 
+	background-color: #fff; 
+	z-index: 10; 
+	position: fixed;
+	margin: 50px; 
+	visibility: hidden;
+}
+
+#map1 {
+	width:800px; 
+	height:600px; 
+	margin-right: 50px; 
+	float: left;
+}
